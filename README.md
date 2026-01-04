@@ -1,8 +1,9 @@
-# contract HelloWorld Project
+# Contract HelloWorld 
 
-The repository is created to demonstrate **contract** design.
+The repository is created to demonstrate **contract** design using OpenAPI. The approach is generate contract, Java Code, from the Spec, OpenAPI Spec.
 
-## Building the application
+## Building Application
+
 Maven is being used for building the project. Simple run the following command to
 build the application.
 
@@ -12,7 +13,8 @@ build the application.
 $ mvn clean install
 ```
 
-## Preparing docker
+## Preparing Docker
+
 Before running the application on Docker you need to prepare the Docker first.
 Here is the steps
 - create a volume called **postgressql**
@@ -23,8 +25,10 @@ Here is the steps
 docker volume create postgressql
 ```
 
-## Running the application
+## Running Application
+
 ### Running each service locally
+
 After building the application successfully, in a terminal from the project root
 directory, run the following commands:
 
@@ -34,7 +38,7 @@ $ java -jar -Dspring.profiles.active=local service-parent/customer-service/targe
 $ java -jar -Dspring.profiles.active=local service-parent/order-service/target/*.jar
 ```
 
-### Running using docker
+### Running on Docker
 
 Having Docker installed, after building the application successfully,
 in a terminal from the project root directory, run the following command.
@@ -43,7 +47,7 @@ in a terminal from the project root directory, run the following command.
 $  docker-compose up -d
 ```
 
-## Application verification
+## Application Verification
 
 After running the application, verify that the following endpoints are accessible
 
@@ -78,16 +82,18 @@ $ curl -X POST -H 'Content-Type: application/json' -d '{"customer-id": "43a814af
 $ curl -X GET  -H 'Content-Type: application/json' http://localhost:7061/order-service/order/{id}
 ```
 
-## Useful links
+## Useful Links
 
-| Tool      | Version                                                             |
-|-----------|---------------------------------------------------------------------|
-| Oracle    | https://www.oracle.com/index.html                                   |
-| JDK       | https://www.oracle.com/java/technologies/javase-downloads.html      |
-| OpenJDK   | https://openjdk.java.net/install/                                   |
-| Docker    | https://www.docker.com                                              |
-| contract  | https://spring.io/blog/2022/10/12/observability-with-spring-boot-3  |
+| Tool            | Link                                                                                                          |
+|-----------------|---------------------------------------------------------------------------------------------------------------|
+| Oracle          | [Oracle](https://www.oracle.com/index.html)                                                                   |
+| JDK             | [JDK](https://www.oracle.com/java/technologies/javase-downloads.html)                                         |
+| OpenJDK         | [OpenJDK](https://openjdk.java.net/install/)                                                                  |
+| Docker          | [Docker](https://www.docker.com)                                                                              |
+| Postgres        | [Postgres](https://www.postgresql.org//)                                                                      |
+| Swagger CodeGen | [Swagger CodeGen](https://swagger.io/docs/open-source-tools/swagger-codegen/codegen-v3/workflow-integration/) |
 
 
-## Contact information
+## Contact Information
+
 Author: [Reza Mousavi](rza.mousavi@gmail.com)
