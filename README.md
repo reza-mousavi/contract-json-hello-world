@@ -2,9 +2,6 @@
 
 The repository is created to demonstrate **contract** design.
 
-## Architecture
-![typical microservice architecture regarding Zipkin](image/zipkin.png)
-
 ## Building the application
 Maven is being used for building the project. Simple run the following command to
 build the application.
@@ -24,7 +21,6 @@ Here is the steps
 ### Create Volume
 ```
 docker volume create postgressql
-docker volume create --driver local --opt type=nfs --opt device=C:/tools/docker/runtime/data/postgressql postgressql
 ```
 
 ## Running the application
@@ -36,7 +32,6 @@ directory, run the following commands:
 $ java -jar -Dspring.profiles.active=local service-parent/product-service/target/*.jar
 $ java -jar -Dspring.profiles.active=local service-parent/customer-service/target/*.jar
 $ java -jar -Dspring.profiles.active=local service-parent/order-service/target/*.jar
-...
 ```
 
 ### Running using docker
@@ -45,20 +40,12 @@ Having Docker installed, after building the application successfully,
 in a terminal from the project root directory, run the following command.
 
 ```
-$  docker-compose -f .\docker-compose-zipkin.yml up -d
-$  docker-compose -f .\docker-compose-app.yml up -d
+$  docker-compose up -d
 ```
 
 ## Application verification
 
 After running the application, verify that the following endpoints are accessible
-
-### API Gateway Service
-Having curl installed, invoke the following get or post HTTP calls
-
-```
-$ curl -X GET http://localhost:7061/actuator/gateway/routes
-```
 
 ### Invoking CustomerService
 
